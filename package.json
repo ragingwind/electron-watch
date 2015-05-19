@@ -1,6 +1,6 @@
 {
   "name": "electron-watch",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Watch changes in Electron App",
   "license": "MIT",
   "repository": "electronkr/electron-watch",
