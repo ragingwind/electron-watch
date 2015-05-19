@@ -1,0 +1,28 @@
+{
+  "name": "electron-watch",
+  "version": "0.0.0",
+  "description": "Watch changes in Electron App",
+  "license": "MIT",
+  "repository": "electronkr/electron-watch",
+  "author": {
+    "name": "ragingwind",
+    "email": "ragingwind@gmail.com",
+    "url": "ragingwind.me"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    ""
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*"
+  }
+}
