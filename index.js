@@ -1,10 +1,23 @@
 'use strict';
-module.exports = function (str, opts) {
-	if (typeof str !== 'string') {
-		throw new TypeError('Expected a string');
-	}
 
-	opts = opts || {};
+var globWatcher = require('glob-watcher');
 
-	return str + ' & ' + (opts.postfix || 'rainbows');
+function watch(opt) {
+	opt = opt || {
+		['./**/*.js', './**/*.jsx']
+	};
+
+	var watcher = globWatcher(opt);
+	watcher.on('change', function(e) {
+
+	})
 };
+
+function sync() {
+
+}
+
+module.exports = {
+	watch: watch,
+	sync: sync
+}
