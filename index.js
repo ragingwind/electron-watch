@@ -3,21 +3,35 @@
 var globWatcher = require('glob-watcher');
 
 function watch(opt) {
-	opt = opt || {
-		['./**/*.js', './**/*.jsx']
-	};
+    var socket;
+    var io = require('socket.io')(3080);
 
-	var watcher = globWatcher(opt);
-	watcher.on('change', function(e) {
+    io.of('/watch').on('connection', function(s) {
+        socket = s;
+    });
 
-	})
+    opt = opt || ['./**/*.js', './**/*.jsx']
+
+    var watcher = globWatcher(opt);
+    watcher.on('change', function(e) {
+        s.emit('changes', {e:e});
+    })
 };
 
-function sync() {
+function sync(cb) {
+    var io = require('socket.io-client')('http://localhost:3080/watch');
+    var watch = io.connect();
 
+    watch.on('connect', function() {
+        console.log('connect');
+    });
+
+    watch.on('event', function(data) {
+        cb(data);
+    });
 }
 
 module.exports = {
-	watch: watch,
-	sync: sync
+    watch: watch,
+    sync: sync
 }

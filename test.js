@@ -1,7 +1,8 @@
 'use strict';
 var assert = require('assert');
-var electronWatch = require('./');
+var watch = require('./');
 
-it('should ', function () {
-	assert.strictEqual(electronWatch('unicorns'), 'unicorns & rainbows');
+it('should ', function (cb) {
+  watch.watch();
+  watch.sync();
 });

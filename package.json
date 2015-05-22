@@ -21,7 +21,11 @@
   "keywords": [
     ""
   ],
-  "dependencies": {},
+  "dependencies": {
+    "glob-watcher": "~2.0.0",
+    "socket.io": "~1.3.5",
+    "socket.io-client": "^1.3.5"
+  },
   "devDependencies": {
     "mocha": "*"
   }
