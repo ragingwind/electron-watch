@@ -10,12 +10,11 @@ function watch(opt) {
         socket = s;
     });
 
-    opt = opt || ['./**/*.js', './**/*.jsx']
-
-    var watcher = globWatcher(opt);
+    opt = opt || ['./*.js']
+    var watcher = globWatcher(['./*.js', '!./something.js']);
     watcher.on('change', function(e) {
-        s.emit('changes', {e:e});
-    })
+      s.emit('changes', {e:e});
+    });
 };
 
 function sync(cb) {

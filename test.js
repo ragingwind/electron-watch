@@ -4,5 +4,5 @@ var watch = require('./');
 
 it('should ', function (cb) {
   watch.watch();
-  watch.sync();
+  watch.sync(cb);
 });
